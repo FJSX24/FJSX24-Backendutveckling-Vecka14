@@ -1,0 +1,52 @@
+💡 Lätt:
+Nodejs:
+✅ Skapa en modul dateModule.js som returnerar dagens datum.
+
+✅ Importera den i server.js.
+
+Express:
+✅Lägg till en extra route /contact som visar kontaktuppgifter.
+
+✅Skapa en route /api/info som returnerar JSON med kursinformation.
+
+💡 Medel:
+Nodejs:
+✅ Skapa en modul som läser och skriver JSON-data till en fil.
+✅ Använd fs för att hantera JSON-filen.
+
+Express:
+✅Lägg till en ny route /api/users som returnerar en lista med namn i JSON-format.
+
+✅Använd res.json() för att skicka JSON-svar.
+
+💡 Svårt/Avancerad:
+Nodejs:
+✅ Bygg en enkel loggningsmodul - Skapa en modul som loggar alla händelser i ett program till en textfil.
+
+✅ Simulera en API-request - Skapa en modul som läser data från en JSON-fil och returnerar det som en falsk API-response när en server anropas.
+
+Express:
+✅Implementera en middleware som loggar tid och URL för varje inkommande request.
+
+✅Skapa en route /api/time som returnerar aktuell servertid i JSON-format.
+
+--------------------
+Extra övningar:
+https://github.com/zocom-christoffer-wallenberg/nodejs-read-write-exercises
+
+-------------------------
+Hantera externa moduler med npm
+1. Installation av externa moduler:
+● Lär dig hur du använder npm för att söka, installera och hantera externa moduler.
+● Installera några populära externa moduler som lodash eller moment för att utforska deras
+funktionalitet.
+2. Använda externa moduler:
+● Skapa en ny fil och använd en eller flera av de installerade externa modulerna för att utföra
+olika uppgifter.
+● Utforska dokumentationen för de externa modulerna för att förstå hur man använder deras
+funktioner och metoder.
+3. Skapa ett eget paket med npm:
+● Skapa ett eget Node.js-paket genom att skapa en package.json-fil och lägga till en kort
+beskrivning och version.
+● Publicera ditt paket på npm (om du är redo att dela det med andra) eller installera det lokalt
+för att använda det i dina egna projekt.
