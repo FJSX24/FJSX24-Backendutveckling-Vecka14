@@ -1,0 +1,141 @@
+🧪 Dagens Övningar – Backend Modulhantering & NPM
+Ni övar idag på:
+
+✅ NPM & package.json
+✅ Import vs Require (CommonJS vs ES Modules)
+✅ Läsning och skrivning av JSON- och textfiler
+✅ Egna moduler
+✅ Core-moduler (fs, path, process)
+✅ .env & dotenv
+
+📝 Tips: Använd "type": "module" i package.json så ni kan använda import/export.
+
+-----------------------------------------------------
+🟢 Enkla Övningar
+
+1️⃣ Läs och skriv JSON-data
+
+📌 Instruktion:
+1. Skapa en JSON-fil data.json med följande innehåll:
+{
+    "message": "Hej från JSON!",
+    "version": 1.0
+}
+
+2. Skapa en modul jsonHandler.js som kan:
+- Läsa in objektet
+- Öka version med 1
+- Spara tillbaka filen
+
+3. Anropa modulen i app.js
+
+✅ Förväntat resultat: version-nummer ökar varje gång du kör node app.js
+
+--------------------------------
+2️⃣ Skapa och använda en egen modul
+
+📌 Instruktion:
+1. Skapa en modul math.js.
+
+2. Skapa en fil app.js och använd modulen.
+
+✅ Kör: node app.js
+✅ Förväntat resultat: "5 + 3 = 8" och "10 - 7 = 3" skrivs ut i terminalen.
+---------------------------------
+3️⃣ Använd fs-modulen för att hantera textfiler
+
+📌 Instruktion:
+1. Skapa en modul fileHandler.js med funktionerna:
+
+writeFile(filename, content)
+
+readFile(filename)
+
+2. Använd fs.writeFileSync och fs.readFileSync
+
+3. Använd .env för att definiera filnamnet
+
+✅ Förväntat resultat: Skapar en textfil med innehållet “Hej från Node.js!”
+
+💡 Tips: Glöm inte dotenv.config() i början av app.js
+
+✅ Kör: node app.js
+
+----------------------------------------
+🟡 Medelsvåra Övningar
+
+4️⃣  Skapa en config-modul med .env
+📌 Instruktioner:
+
+1. Skapa en .env med:
+APP_NAME=MinCoolaApp
+VERSION=2.0
+PORT=3000
+
+2. Skapa en config.js som laddar in och exporterar dessa värden
+
+3. Använd config i app.js för att logga applikationsinfo
+
+✅ Förväntat resultat:
+App: MinCoolaApp, Version: 2.0, Körs på port: 3000
+
+
+-----------------------------------------
+5️⃣ Automatisk loggning
+
+📌 Instruktion:
+1. Skapa en modul logger.js
+
+2. Använd modulen i app.js:
+Varje gång du loggar ett meddelande, skriv det till log.txt med tidsstämpel
+
+✅ Förväntat resultat: 
+2025-04-02T10:15:30.000Z - Applikationen startades.
+2025-04-02T10:16:01.000Z - En användare loggade in.
+
+💡 Tips: fs.appendFileSync() är din vän
+
+------------------------------------------
+🔴 Svåra Övningar
+
+6️⃣ Skapa en enkel användardatabas
+
+📌 Instruktion:
+1. Skapa en fil database.js som innehåller två funktioner:
+- saveUser(name)
+- getUsers()
+
+2. Använd fs och JSON för att spara/läsa en lista med användarnamn
+
+✅ Förväntat resultat: 
+Registrerade användare: ['Alice', 'Bob']
+
+💡 Tips: Spara i users.json eller users.txt – du bestämmer!
+
+--------------------------------
+7️⃣ Skapa en interaktiv terminalapp
+
+📌 Instruktion:
+1. Installera readline-sync:
+npm install readline-sync
+
+2. Skapa app.js
+
+✅ Kör: node app.js
+✅ Förväntat resultat: Programmet frågar användaren om en anteckning och sparar den i notes.txt.
+
+----------------------------------------
+📦 Bonus: Miljöbingo!
+✅ Bocka av så många du kan:
+
+ Har använt en .env-fil
+
+ Har delat upp logik i 2+ moduler
+
+ Har skapat och läst från .json-fil
+
+ Har loggat till en fil med fs.appendFileSync
+
+ Har använt import/export (inte require)
+
+ Har kommenterat en klasskamrats kod / tipsat någon

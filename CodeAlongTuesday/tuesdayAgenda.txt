@@ -1,0 +1,283 @@
+🎯 Lektionsmål
+Efter lektionen ska studenterna kunna:
+
+✅ Installera och konfigurera en Node.js-miljö lokalt
+✅ Förstå syftet med och skapa en package.json
+✅ Importera moduler med require()
+✅ Använda npm för att installera externa paket
+✅ Förstå skillnaden mellan CommonJS och ES6-moduler och använda import/export
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+📝 Lektionsplanering (3 timmar)
+
+Inledning & Agenda
+
+Teori: Node.js, moduler, npm, package.json (Slides: Node.js Intro)
+	
+👨‍💻 Code-along #1: Setup, require(), egen modul, extern modul
+
+Teori: ES6 import/export (Slides: ES6 Moduler)
+
+👨‍💻 Code-along #2: ES6-moduler
+
+Självständiga övningar
+
+Avslutning & diskussion
+
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+📢 Talarmanus & Genomgångar
+
+🧑‍🏫 Node.js & NPM – Slides 14–26
+
+🎤 Inledning:
+"Välkomna! Idag jobbar vi med grunden till all backendutveckling i Node – moduler och pakethantering. Tänk på det som att ni bygger Lego: varje funktionalitet är en liten kloss som ni plockar in."
+-------------------------------------
+🟨 Slide 14–15: Vad är en modul?
+🗣️ Talarmanus:
+
+"Node.js är modulärt. Det betyder att det mesta vi använder är uppdelat i små återanvändbara delar – moduler. Vi har tre sorters moduler:
+
+Core-moduler: Levereras med Node.js – t.ex. fs, http, path.
+
+Egna moduler: Filer vi själva skapar i projektet – ofta för att dela upp vår kod.
+
+Externa moduler: Tredjepartslösningar från npm.
+
+Tänk: Du slipper skriva om hjulet varje gång. Du bara hämtar rätt modul och kör!"
+
+-------------------------------------
+🟨 Slide 16: Core-moduler
+🗣️ Talarmanus:
+
+"Core-moduler är inbyggda i Node. De löser vanliga problem utan att du behöver installera något.
+
+Exempel:
+
+fs för att läsa och skriva filer
+
+http för att skapa servrar
+
+path för att jobba med filvägar
+
+Du behöver bara require('modulnamn') – sen är du igång!"
+
+-------------------------------------
+🟨 Slide 17–18: Egna moduler
+🗣️ Talarmanus:
+
+"När våra program växer blir det snabbt rörigt. Lösningen? Dela upp i egna moduler.
+
+En modul kan vara en .js-fil som innehåller funktioner, klasser eller konstanter.
+
+För att dela med oss använder vi module.exports eller exports."
+
+🧠 Kodexempel slide 18:
+
+-------------------------------------
+🟨 Slide 19: Module Caching
+🗣️ Talarmanus:
+
+"Node cache:ar moduler du require:ar. Det betyder att om du importerar samma modul på flera ställen, laddas den bara en gång.
+
+Det kan vara bra att veta när man jobbar med moduler som håller state (ex. en databas eller en räknare)."
+
+-------------------------------------
+🟨 Slide 20–21: Externa moduler (npm)
+🗣️ Talarmanus:
+
+"Här kommer guldgruvan – npm!
+
+På npmjs.com finns över en miljon färdiga moduler. Vill du ha routing? express. Databas? mongoose. Auth? jsonwebtoken.
+
+Det är som en gigantisk verktygslåda. Du bara plockar det du behöver.
+
+Tips: Läs README och stjärnor på GitHub – alla moduler är inte lika bra."
+
+-------------------------------------
+🟨 Slide 22–23: package.json
+🗣️ Talarmanus:
+
+"package.json är som ditt projekts identitetsinställningar.
+
+Här finns info om:
+
+namn och version
+
+beskrivning och författare
+
+vilka externa moduler du använder (dependencies)
+
+Den skapas automatiskt när du initierar ett projekt med npm init."
+
+-------------------------------------
+🟨 Slide 24: Skapa package.json
+🗣️ Talarmanus:
+
+"Så här skapar du package.json:
+
+npm init: Får frågor i terminalen, kan skriva in namn, version, etc.
+
+npm init -y: Skapar en default-variant direkt.
+
+Vi kommer använda -y under vår code along."
+
+-------------------------------------
+🟨 Slide 25–26: NPM Install & Flaggor
+🗣️ Utvecklat talarmanus:
+
+"npm install <paket> gör faktiskt två saker:
+
+Den laddar ner paketet till en lokal node_modules-mapp i ditt projekt.
+
+Den uppdaterar package.json under "dependencies" (om du inte använder någon särskild flagga).
+
+Vill du ha lite mer kontroll – då finns flaggor:
+
+🔹 --save-dev eller -D
+➤ Används för utvecklingsberoenden – t.ex. nodemon, jest, eslint. Dessa körs inte i produktion.
+
+🔹 --global eller -g
+➤ Installerar paketet globalt på din dator, utanför projektet – t.ex. nodemon som CLI-verktyg.
+
+🔹 --save eller -S
+➤ Detta var standard före npm v5. Numera är --save onödig – den används implicit.
+
+💡 Exempel:
+npm install express
+npm install nodemon --save-dev
+npm install typescript -g
+
+📦 package-lock.json skapas också – det är en exakt versionskarta över alla beroenden."
+-------------------------------------
+-------------------------------------
+📂 PowerPoint 2: "ES6 Moduler"
+
+🟨 Slide 2–3: Varför moduler?
+🗣️ Talarmanus:
+
+"ES6-moduler gör koden renare, mer strukturerad och lättare att underhålla samt blir applikationen mer skalbar.
+
+Varje fil är ett eget scope – så vi kan undvika globala variabler och konflikter.
+
+Det här är standarden i frontend och nu även i Node.js – men med vissa inställningar."
+
+-------------------------------------
+🟨 Slide 4: Modulstruktur
+🗣️ Förbättrat talarmanus:
+
+"Det här diagrammet visar hur vi strukturerar ett projekt med moduler.
+
+🔹 index.html laddar main.js – vår 'entry point'. 🔹 main.js importerar funktioner från andra moduler. 🔹 De i sin tur kan importera ännu fler.
+
+Varje modul är avskild, med sitt eget scope.
+
+Modularisering gör koden:
+
+Återanvändbar ✅
+
+Lättare att felsöka ✅
+
+Skalbar ✅
+
+Ni kommer märka detta direkt när ni jobbar i team: det är livsnödvändigt att kunna dela upp funktionalitet tydligt."
+
+-------------------------------------
+🟨 Slide 6: Grundläggande import/export
+🗣️ Talarmanus:
+
+"I ES6 använder vi export och import."
+
+Viktigt att komma ihåg: Filnamnet ska ha .js, och du måste köra Node i module-läge."
+
+-------------------------------------
+🟨 Slide 7–10: Miniräknare & alias
+🗣️ Talarmanus:
+
+"Du kan exportera flera funktioner från en fil – och importera dem antingen en och en eller som ett objekt.
+
+Exempel:
+-------------------------------------
+🟨 Slide 11: ES6-moduler i Node.js
+🗣️ Förtydligat och korrekt talarmanus:
+
+"Till skillnad från webbläsaren så stödjer Node.js inte ES6-import/export direkt som standard.
+
+Du behöver säga åt Node: 'jag vill använda modulsystemet ES6 istället för CommonJS (require/module.exports)'.
+
+Det gör du på olika sätt:
+
+Lägg till "type": "module" i package.json
+
+Eller lägga till type module i en html script fil.
+
+Eller döp filerna till .mjs – men då behöver du hålla koll på det formatet hela tiden.
+
+💡 Om du inte gör det kommer du få fel som:
+
+SyntaxError: Cannot use import statement outside a module
+
+✅ Tips: Jag rekommenderar "type": "module" – det är enklare att jobba konsekvent med."
+
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+Introduktion inför code along:
+
+Målet blir att:
+
+✅ Dela upp Express-servern i moduler (t.ex. server.js och greetings.js)
+✅ Introducera en enkel extern modul (moment eller chalk är bra första exempel)
+✅ Visa på hur package.json skapas och vad som händer vid npm install
+✅ Öva ES6 import/export i ett separat exempel – som avslutning
+
+-------------------------------------------------
+🔧 Del 1 – Projektsetup + extern modul
+
+📂 Mappstruktur:
+/
+  |- server.js
+  |- greetings.js
+  |- .env
+  |- package.json (skapas)
+
+🗣️ Talarmanus:
+"Nu skapar vi ett nytt Express-projekt, installerar en extern modul, och organiserar vår kod i moduler."
+
+npm init -y
+
+npm install express dotenv
+
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+Code along:
+
+Lägg till:"type": "module" i package.json
+
+-------------------------------------------------
+📝 Skapa filen server.js:
+
+Genomför den koden.
+
+🗣️ Talarmanus – Introduktion av dotenv:
+"I professionella projekt vill vi inte hårdkoda känslig eller konfigurerbar information i vår kod – t.ex. API-nycklar, databasanvändare, eller portnummer.
+
+Med dotenv kan vi lagra sånt i en .env-fil som aldrig läggs upp på GitHub.
+
+Det är första steget mot säkrare och mer skalbara projekt."
+-------------------------------------------------
+📝 Skapa filen greetings.js:
+
+Genomför den koden.
+
+Starta servern: node server.js
+
+OBS!!! Glöm inte att skapa en .gitignore fil och lägga till .env i den! 
+
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+Dags för Självständig Övningar
