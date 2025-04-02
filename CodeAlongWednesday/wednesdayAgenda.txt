@@ -1,7 +1,6 @@
 🎯 Lektionsmål
 Efter lektionen ska studenterna kunna:
 
-✅ Installera och konfigurera en Node.js-miljö lokalt
 ✅ Förstå syftet med och skapa en package.json
 ✅ Importera moduler med require()
 ✅ Använda npm för att installera externa paket
