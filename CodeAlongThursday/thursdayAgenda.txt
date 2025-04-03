@@ -16,6 +16,8 @@ Code-Along  - Skapa en första server med Express.js och en GET-route.
 
 Självständig övningar.
 
+Code review: Visa upp valfria övningar
+
 Del 2: 
 - PowerPoint & Teori:
 

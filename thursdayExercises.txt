@@ -16,9 +16,11 @@ Tips: Använd res.json().
 Endpoint: /api/greet/:name
 
 Exempelanrop: /api/greet/Alice
+/api/greet/mAndus
 
 Response:
 { "message": "Hej Alice!" }
+{ "message": "Hej mAndus!" }
 
 Tips: Använd req.params.name.
 -------------------------------------------
