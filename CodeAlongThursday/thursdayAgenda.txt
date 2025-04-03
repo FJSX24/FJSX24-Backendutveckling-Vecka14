@@ -240,6 +240,14 @@ API Endpoint: http://localhost:3000/api
 Dags för Självständig Övningar del 1
 
 -------------------------------------------------
+Code review av de studerande: Där de visar upp lösningar och problem för olika övningar samt att de studerande får visa på olika lösningar.
+
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+Mentimeter
+
+-------------------------------------------------
 -------------------------------------------------
 -------------------------------------------------
 Lektion del 2:

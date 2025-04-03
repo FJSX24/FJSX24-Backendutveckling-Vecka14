@@ -100,7 +100,7 @@ Hur kan vi utöka API:et för att hantera mer komplex data?
 -------------------------------------------
 För de som blir klar tidigt och vill avancera:
 
-🔥 Övning 7: Returnera olika statuskoder beroende på användarinmatning
+🔥 Övning 7B: Returnera olika statuskoder beroende på användarinmatning
 Uppgift:
 Skapa en POST-endpoint där användaren skickar in sitt namn. Om namnet är längre än 2 tecken, returnera en "success"-respons med statuskod 200. Om namnet är för kort, returnera en felrespons med statuskod 400 och ett felmeddelande.
 
