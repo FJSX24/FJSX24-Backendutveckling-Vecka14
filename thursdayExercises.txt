@@ -98,6 +98,60 @@ Hur kan vi utöka API:et för att hantera mer komplex data?
 -------------------------------------------
 -------------------------------------------
 -------------------------------------------
+För de som blir klar tidigt och vill avancera:
+
+🔥 Övning 7: Returnera olika statuskoder beroende på användarinmatning
+Uppgift:
+Skapa en POST-endpoint där användaren skickar in sitt namn. Om namnet är längre än 2 tecken, returnera en "success"-respons med statuskod 200. Om namnet är för kort, returnera en felrespons med statuskod 400 och ett felmeddelande.
+
+Endpoint: /api/validate-name
+Metod: POST
+Body:
+{ "name": "Bo" }
+
+Response exempel – OK:
+{ "message": "Hej Bo!" }
+Status: 200
+
+Response exempel – Error:
+{ "error": "Namnet måste vara minst 3 tecken långt" }
+Status: 400
+
+Tips:
+
+Använd if-sats för att kolla längd på req.body.name.
+
+Använd res.status(400).json() vid fel.
+
+-------------------------------------------
+⭐ Övning 8: Filtrera kurser med query-parametrar
+
+Uppgift:
+Utöka /api/courses-endpointen så att man kan filtrera kurser med en query parameter. Om ingen parameter skickas med, returnera hela listan. Om en parameter skickas, returnera bara kurser som matchar.
+
+Exempel-URL:
+/api/courses?search=JavaScript
+
+Exempeldata:
+const courses = [
+  { id: 1, name: 'JavaScript Grundkurs' },
+  { id: 2, name: 'Backend med Express' },
+  { id: 3, name: 'React med Hooks' }
+];
+
+Exempelrespons – vid ?search=React:
+[
+  { "id": 3, "name": "React med Hooks" }
+]
+
+Exempelrespons – vid ?search= eller utan query:
+[
+  { "id": 1, "name": "JavaScript Grundkurs" },
+  { "id": 2, "name": "Backend med Express" },
+  { "id": 3, "name": "React med Hooks" }
+]
+
+
 -------------------------------------------
 -------------------------------------------
 -------------------------------------------
